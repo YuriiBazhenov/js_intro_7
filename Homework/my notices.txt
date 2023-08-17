@@ -1,0 +1,74 @@
+//Task-1
+// let min = 10;
+// let max = 20;
+// let random_number = (Math.floor(Math.random() * (max - min + 1))+min);
+// console.log("The random number = " + random_number);
+// console.log("The random number * 5 = " + random_number * 5);
+
+
+//Task-2
+// let min1 = 0;
+// let max1 = 10;
+//
+//let random_number1 = (Math.floor(Math.random() * (max1 - min1 + 1))+min1);
+// console.log("The random number = " + random_number1);
+// let random_number2 = (Math.floor(Math.random() * (max1 - min1 + 1))+min1);
+// console.log("The random number = " + random_number2);
+// console.log("Min number = " + Math.min(random_number1,random_number2));
+// console.log("Max number = " + Math.max(random_number1,random_number2));
+// console.log("Difference = " + (Math.max(random_number1,random_number2) - Math.min(random_number1,random_number2) ));
+
+
+
+// //Task-3
+
+// let random1 = (Math.floor(Math.random() * 51)+50);
+// console.log("The random number = " + random1);
+// let remainder = random1 % 10;
+// console.log("The random number % 10 = " + remainder);
+
+//Task-4
+
+// let min1 = 0;
+// let max1 = 10;
+// let random_number1 = (Math.floor(Math.random() * (max1 - min1))+min1);
+// console.log("The random number 1 = " + random_number1);
+// let random_number2 = (Math.floor(Math.random() * (max1 - min1))+min1);
+// console.log("The random number 2 = " + random_number2);
+// let random_number3 = (Math.floor(Math.random() * (max1 - min1))+min1);
+// console.log("The random number 3 = " + random_number3);
+// let random_number4 = (Math.floor(Math.random() * (max1 - min1))+min1);
+// console.log("The random number 4 = " + random_number4);
+// let random_number5 = (Math.floor(Math.random() * (max1 - min1))+min1);
+// console.log("The random number 5 = " + random_number5);
+// console.log("Test data: " + "\n" + random_number1 + " " + random_number2 + " " + random_number3 + " " + random_number4 + " " + random_number5);
+// console.log("Expected result: " + "\n" + (random_number1 * 5 + random_number2 * 4 + random_number3 * 3 + random_number4 * 2 +  random_number5 ))
+
+
+//Task-5
+
+//  let random_1 = Math.ceil(Math.random() * 25) + 1;
+//  console.log(random_1);
+//  let random_2 = Math.ceil(Math.random() * 25) + 26;
+//  console.log(random_2);
+//  let random_3 = Math.ceil(Math.random() * 25) + 51;
+//  console.log(random_3);
+//  let random_4 = Math.ceil(Math.random() * 25) + 76;
+//  console.log(random_4);
+//  let dif = Math.max(random_1,random_2,random_3,random_4) - Math.min(random_1,random_2,random_3,random_4);
+// console.log("Difference of max and min = " + dif);
+// console.log("Difference of second and third = " + (random_2 - random_3));
+// console.log("Average of all = " + ((random_1+random_2 + random_3 + random_4))/4)
+let random_1 = Math.ceil(Math.random() * 25);
+let random_2 = Math.ceil(Math.random() * 25) + 25;
+let random_3 = Math.ceil(Math.random() * 25) + 50;
+let random_4 = Math.ceil(Math.random() * 25) + 75;
+let dif = Math.max(random_1,random_2,random_3,random_4) - Math.min(random_1,random_2,random_3,random_4);
+console.log("Expected result: \nDifference of max and min = " + dif);
+console.log("Difference of second and third = " + (random_2 - random_3));
+console.log("Average of all = " + (random_1 + random_2 + random_3 + random_4)/4);
+
+
+Math.ceil(Math.random() * max - min +1) + min -1;  both included
+
+Math.ceil(Math.random() * max - min ) + min -1; both excluded
