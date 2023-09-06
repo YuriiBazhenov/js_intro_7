@@ -19,8 +19,8 @@ const newArr = arr2_str_pipe.split(' | ');
 console.log(newArr); // [ 'Mouse', 'Computer', 'Desk' ]
 
 
-let str = 'Tech'; // [ 'T', 'e', 'c', 'h' ]
-const str_splitted = str.split('');
+let str = 'Java Script is fun'; // [ 'T', 'e', 'c', 'h' ]
+const str_splitted = str.split(' ');
 
 console.log(str_splitted); // [ 'T', 'e', 'c', 'h' ]
 

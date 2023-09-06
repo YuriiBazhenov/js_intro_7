@@ -41,10 +41,32 @@ for(const product of appleStore){
 console.log(most_expensive.productName);
 
 
+//
+let least_expensive = {
+    productName: null,
+    price: 0,
+    quantity: 0
+};
+
+for (const product of appleStore){
+    if (product.price < least_expensive.price) least_expensive = product;
+}
+
+console.log(least_expensive.productName);
 
 
+//
 
+let smallestQuantity = {
+    productName: null,
+    price: 0,
+    quantity: 0
+};
 
-
+for (const product of appleStore){
+    if(product.quantity.Math.max()) smallestQuantity = product;
+    
+}
+console.log()
 
 

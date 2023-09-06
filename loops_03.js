@@ -37,3 +37,33 @@ for(let i = 1; i <= 30; i++){ // 15 or 30
     else if(i % 5 === 0) console.log('Buzz');
     else console.log(i);
 }
+
+
+function lastShortest(array){
+    let sh = Infinity;
+    let word = '';
+    
+    for (const str of array){
+        if(str.length <= sh){
+            sh = str.length;
+            word = str
+        }
+       
+    }
+    return word;
+}
+
+console.log(lastShortest(["red", "blue", "yellow", "white"]));
+console.log(lastShortest(["Apple", "Banana", "Mango"]));
+
+
+function max(array) {
+    let num = - Infinity
+    for (const number of array){
+        if (number > num) num = number
+    }
+    return num;
+}
+
+console.log(max([-2, 0, -7, 10, -5]));
+console.log(max([0, 3, -9,  5, 8]));

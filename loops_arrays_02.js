@@ -24,7 +24,7 @@ Third array->       [ 45, 24, 10, 1, 0 ]
 */
 
 const arr1 = [ 5, 8, 2, 1, 2 ];
-const arr2 = [ 9, 3, 5, 1, 0 ];
+const arr2 = [ 9, 3, 5, 1, 0, 5, 7 ];
 
 const arr3 = [];
 

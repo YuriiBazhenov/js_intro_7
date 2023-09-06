@@ -184,3 +184,62 @@ function has4(str1){
 }
 console.log(has4("Tec"));
 
+
+
+/*
+Write a function named as lastShortest() which takes 
+an array as an argument and returns the shortest 
+element when invoked.
+NOTE: Assume you will not be given an empty array, 
+and it contains only string elements.
+NOTE: If there are 2 or more elements having the 
+shortest count of characters, always return the last 
+occurrence.
+ 
+Examples:
+lastShortest(["red", "blue", "yellow", "white"])  -> 
+"red"
+lastShortest(["Apple", "Banana", "Mango"])  -> 
+"Mango"
+lastShortest(["white", "yellow", "brown"])  -> 
+"brown"
+*/
+
+
+function lastShortest(array){
+  let lastS = '';
+  let max = Infinity
+  for (const word of array){
+    if (word.length < max){
+      lastS = word
+      max.length = word.length
+    }
+    return lastS;
+  }
+
+}
+
+console.log(lastShortest(["red", "blue", "yellow", "white"]));
+
+
+
+
+function firstPos(array){
+  for(const number of array){
+    if(number > 0) return (number);
+  }
+}
+
+console.log(firstPos([0, 3, -9,  5, 8]));
+
+
+
+
+function max(array){
+  let max = -Infinity;
+  for (const number of array) {
+    if (number > max) max = number
+  }
+  return max;
+}
+console.log(max([0, 3, -9, 5, 8]));

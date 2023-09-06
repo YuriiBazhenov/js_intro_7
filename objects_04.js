@@ -52,29 +52,41 @@ const users = [
         }
     }
 ];
+
 console.log(users.length); // 4
+
 // Count how many users are older than 30   -> 2
-
-
-let older = 0;
-
-for(const user of users){
-    if (user.age > 30) older++;
-    console.log(user);
-
-}
-
-console.log(older);
+// Count how many users live in Chicago     -> 2
+// Find and store all the users name younger than 35    -> [ 'Tech', 'Jane', 'Alex' ]
+// Find average of ages of all users    -> 28
 
 let count = 0;
-for(const user of users){
-if (user.address.city.toLowerCase() === 'chicago' ) count++;
-}
 
+for(const user of users){
+    if (user.age > 30) count++;
+}
 console.log(count);
 
 
+let counter = 0;
+
+for (const user of users){
+    if (user.address.city.toLowerCase() === 'chicago') counter++;
+}
+console.log(counter);
 
 
+const array = [];
+
+for (const user of users){
+    if (user.age < 35) array.push(user.firstName);
+}
+console.log(array);
 
 
+let average = null;
+
+for (const user of users){
+    if (average += user.age );
+}
+console.log(average / users.length);
