@@ -270,11 +270,13 @@ function firstDuplicate(x) {
     else return firstDuplicate1;
 }
 
+
 console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
 console.log(firstDuplicate([1, 2, 3]));
 console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));
 console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));
 console.log(firstDuplicate([12]));
+
 
 /*
 Task 16
@@ -309,6 +311,8 @@ function getDuplicates(x) {
     }
     return duplicates;
 }
+
+
 
 console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
 console.log(getDuplicates([1, 2, 5, 0, 7]));

@@ -117,7 +117,7 @@ NOTE: Be careful about the extra whitespaces before
 and after the string.
 */
 
-
+/*
 function countWords(string) {
     return string.trim().split(' ').length
 }
@@ -125,6 +125,23 @@ function countWords(string) {
 console.log(countWords("     Javascript is fun       "));
 console.log(countWords("Cypress is an UI automation tool.    "));
 console.log(countWords("1 2 3 4"));
+*/
+
+
+function reverseStringWords(string) {
+
+    const word = string.split(" ");
+
+    for (let i = 0; i < word.length; i++) {
+        word[i] = word[i].split("").reverse().join("");
+    }
+    const word1 = word.join(" ");
+
+    return word1;
+}
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("Hello World JavaScript"));
+
 
 /*
 Task 6
@@ -178,8 +195,7 @@ isPalindrome("")  -> true
 */
 
 function isPalindrome(string) {
-    let word1 = string.toLowerCase();
-    let word2 = word1.split('').reverse().toString().replaceAll(',', '');
+    let word2 = string.split('').reverse().toString().replaceAll(',', '');
 return word2.toLowerCase() === string.toLowerCase();
 }
 console.log(isPalindrome("Kayak"));
@@ -315,13 +331,12 @@ add([-5, 6, -3, 11], [5, -6, 3, -11])  -> [0, 0, 0, 0]
 */
 
 
-function add(arr1, arr2) {
-    let arr3 = [];
-    for (let i = 0; i <Math.max(arr1.lengt, arr2.lengt); i++) {
-        arr3.push((arr2[i] || 0) + (arr1[i] || 0));
-
+const add = (arr1, arr2) => {
+    if (arr2.length > arr1.length) [arr1,arr2] = [arr2,arr1]
+    for (let i = 0; i < arr2.length; i++){
+        arr1[i] += arr2[i];
     }
-    return arr3;
+    return arr1;
 }
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
@@ -366,12 +381,13 @@ findClosestTo10([0, -1, -2])  -> 0
 */
 
 
-function findClosestTo10(array) {
-    return array.find((x => x < 10 && x >= 0))
+const findClosestTo10 = arr =>{
+   const dup = arr.sort((x,y) => x - y);
+   return dup;
 }
 
-console.log(findClosestTo10([10, -13, 5, 70, 15, 57, 6, 7, 9]));
-console.log(findClosestTo10([10, -13, 11, 8, 15, -20]));
+console.log(findClosestTo10([10, -13, 5, 70, 15, 57] ));
+console.log(findClosestTo10([10, -13, 8, 12, 15, -20]));
 console.log(findClosestTo10([0, -1, -2]));
 
 
@@ -468,4 +484,9 @@ console.log(isPasswordValid("Chicago12345US!#$%"));
 console.log(isPasswordValid("Abcd1234$"));
 console.log(isPasswordValid("Chicago123$"));
 console.log(isPasswordValid("Test1234#"));
+
+
+let date = new Date;
+console.log(date);
+
 
