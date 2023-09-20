@@ -36,6 +36,7 @@ noDigit("123Hello World149")  -> "Hello World”
 noDigit("123Tech456Global149")  -> "TechGlobal"
 */
 
+
 const noDigit = string => string.split('').filter(x => !('123456789'.includes(x))).join('');
 
 
