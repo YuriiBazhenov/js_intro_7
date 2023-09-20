@@ -127,7 +127,6 @@ sumOfDigits("")  -> 0
 */
 
 
-
 function sumOfDigits(string) {
     let sum = 0;
     for (const char of string) {
@@ -140,7 +139,6 @@ console.log(sumOfDigits("Javascript"));
 console.log(sumOfDigits("John's age is 29"));
 console.log(sumOfDigits("$125.0"));
 console.log(sumOfDigits(""));
-
 
 
 /*
@@ -168,7 +166,6 @@ console.log(arrFactorial([1, 2, 3, 4, 5]))
 console.log(arrFactorial([0, 5]))
 console.log(arrFactorial([5, 0 ,6]))
 console.log(arrFactorial([]))
-
 
 
 /*
