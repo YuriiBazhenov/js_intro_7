@@ -366,7 +366,16 @@ secondMax([10])  -> 10
 */
 
 
+const secondMin = array => {
+    let arr = array.sort((a,b) => a - b)
+        for (const num of arr){
+            if (num !== arr[0]) return num
+        }
+}
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23]));
 
+
+/*
 const secondMin = array => {
     if (array.length < 2) {
         return array[0]
@@ -380,7 +389,7 @@ const secondMin = array => {
 console.log(secondMin([7, 4, 4, 4, 23, 23, 23]));
 console.log(secondMin([3, 4, 5, 6]));
 console.log(secondMin([10]));
-
+*/
 
 /*
 13

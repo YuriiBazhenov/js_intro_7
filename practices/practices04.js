@@ -402,7 +402,7 @@ Expected result 4:
 " " is a whitespace
 */
 
-let var8 = " ";
+let var8 = 'John';
 let var81 = var8.charCodeAt(0);
 
 if((var81 >= 65 && var81 <= 90) || (var81 >= 97 && var81 <= 122)) console.log(`"${var8}" is a letter`);

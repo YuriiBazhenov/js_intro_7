@@ -243,9 +243,6 @@ console.log(count3OrLess("JavaScript is fun"));
 console.log(count3OrLess("My name is John Doe"));
 
 
-let word = ("JavaScript is fun");
-
-console.log(word.split())
 
 
 
@@ -272,7 +269,51 @@ isPrime(1) -> false
 */
 
 
-function isPrime(number){
-    for(let i = 0; i < number.length; i++)
-    if (number)
+function isPrime(number) {
+    for (let i = 0; i < number; i++) {
+        if (number % i === 0)
+            return true
+    }
+    return false
 }
+console.log(isPrime(-5));
+console.log(isPrime(29));
+
+
+/*
+HM 5
+Task 11
+Requirement:
+Write a function named add() which takes two array of 
+numbers as argument and returns a new array with sum of 
+given arrays elements.
+NOTE: Be careful about the array sizes as they could be 
+different.
+Examples:
+add([3, 0, 0, 7, 5, 10], [6, 3, 2] )  -> [9, 3, 2, 7, 
+5, 10]
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])  -> [16, 11, 9,  
+3, 2, 7, 5, 10, 34] 
+add([-5, 6, -3, 11], [5, -6, 3, -11])  -> [0, 0, 0, 0]
+*/
+
+/*
+const add = (arr1, arr2) => {
+ if (arr2.length > arr1.length) [arr1,arr2] = [arr2,arr1];
+
+    for (let i = 0; i < arr2.length; i++) {
+        arr1[i] += arr2[i]
+    }
+    return arr1
+}
+
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+*/
+
+const add = (arr1, arr2) => {
+    if (arr2.length > arr1.length) [arr1,arr2] = [arr2,arr1]
+    return arr1.map((x ,y) => {
+        return x + (arr2[y] || 0)
+    })
+}
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));

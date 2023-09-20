@@ -234,7 +234,7 @@ function countMultipleWords(array) {
         let word = str.split(' ')
         if (word.length > 1) count++;
     }
-    return count;
+    return count; 
 }
 
 console.log(countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ]));
@@ -383,7 +383,7 @@ findClosestTo10([0, -1, -2])  -> 0
 
 const findClosestTo10 = arr =>{
    const dup = arr.sort((x,y) => x - y);
-   return dup;
+   return dup[1];
 }
 
 console.log(findClosestTo10([10, -13, 5, 70, 15, 57] ));
