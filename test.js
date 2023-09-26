@@ -167,7 +167,7 @@ isPalindrome("A")  -> true
 isPalindrome("")  -> true
 */
 
-
+/*
 function isPalindrome(string) {
     let word = string.split('').reverse().toString().replaceAll(',', '')
     return word.toLowerCase() === string.toLowerCase()
@@ -181,7 +181,28 @@ console.log(isPalindrome("ab  a"));
 console.log(isPalindrome("123454321"));
 console.log(isPalindrome("A"));
 console.log(isPalindrome(""));
+*/
 
+const isPalindrome = array => {
+    let pal = '';
+
+    for (let i = array.length -1; i >= 0;i--){
+        pal += array[i]
+        if (pal.toLowerCase() === array.toLowerCase()) return true
+        console.log(pal)
+    }
+    return false
+    
+}
+
+console.log(isPalindrome("Hello"));
+console.log(isPalindrome("Kayak"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("ab  a"));
+console.log(isPalindrome("123454321"));
+console.log(isPalindrome("A"));
+console.log(isPalindrome(""));
 /*
 HM5
 Task 8
@@ -317,3 +338,5 @@ const add = (arr1, arr2) => {
     })
 }
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+
+

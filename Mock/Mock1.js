@@ -14,15 +14,6 @@ doubleOrTripleWord("1")       -> "11"
 doubleOrTripleWord("22")       -> "222222"
 */
 
-/*
-function doubleOrTripleWord (word) {
-    if (word.length % 2 === 0) return word + word + word
-    else if (word.length % 2 !== 0)return word + word
-}
-console.log(doubleOrTripleWord("Tech"));
-console.log(doubleOrTripleWord('Apple'));
-*/
-
 
 const doubleOrTripleWord = word => {
     if (word.length % 2 === 0) return word + word + word
@@ -338,6 +329,8 @@ function count3OrLess (string){
 console.log(count3OrLess("Hello"));
 console.log(count3OrLess("Hi John"));
 console.log(count3OrLess("JavaScript is fun"));
+console.log(count3OrLess("I"));
+console.log(count3OrLess(""));
 
 
 /*
@@ -494,9 +487,16 @@ countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])     -> 4
 countMultipleWords([ ])  
 */
 
+function countMultipleWords (array){
+   let count = 0;
+   array.map(value => {
+    if (value.trim().includes(' ')) count++;
+   })
+return count;
+}
 
-
-
+console.log(countMultipleWords([ "foo", "", "  ", "foo bar", "   foo" ]));
+console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
 
 /*
 FizzBuzz 
@@ -518,18 +518,344 @@ fizzBuzz(12, 5)    -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz"
 fizzBuzz(5, 5)    -> "Buzz" 
 fizzBuzz(9, 6)    -> "Fizz | 7 | 8 | Fizz" 
 */
+
+function fizzBuzz (r1,r2){
+    let array = [];
+    for (let i = Math.min(r1,r2); i <= Math.max(r1,r2);i++){
+    if (i % 15 === 0) array.push('FizzBuzz')
+    else if(i % 5 === 0) array.push('Buzz')
+    else if (i % 3 === 0) array.push('Fizz')
+    else array.push(i)
+    }
+return array;
+}
+
+
+console.log(fizzBuzz(13, 18));
+
+
+/*
+Palindrome 
+Write a function named as isPalindrome() which takes a string word as an argument and 
+returns true if the word is palindrome or returns false otherwise when invoked. 
+NOTE: Palindrome: It is a word that is read the same backward as forward 
+Examples: kayak, civic, madam 
+NOTE: your function should ignore case sensitivity 
  
-const palindrome = array =>{
-    let str = '';
-    for (let i = array.length -1; i >= 0;i--){
-        str += array[i]
-        if (str === array) return true
+Examples: 
+isPalindrome("Hello")   -> false 
+isPalindrome("Kayak")   -> true 
+isPalindrome("civic")   -> true 
+isPalindrome("abba")   -> true 
+isPalindrome("ab  a")   -> false 
+isPalindrome("123454321")   -> true 
+isPalindrome("A")   -> true 
+isPalindrome("")   -> true
+*/
+
+function palindrome(string){
+    let arr = '';
+    for (let i = string.length -1; i >= 0;i--){
+        arr += string[i]
+        if (arr === string) return true
     }
     return false
 }
-
 console.log(palindrome('kayak'));
 console.log(palindrome('hello'));
 console.log(palindrome('civic'));
 console.log(palindrome('1221'));
 console.log(palindrome('java'));
+
+
+/*
+Array Factorial 
+Write a function named arrFactorial() which takes an array of numbers as argument and return 
+the array with every number replaced with their factorials. 
+ 
+Examples: 
+arrFactorial([1, 2, 3 ,4])     -> [1, 2, 6, 24] 
+arrFactorial([0, 5])       -> [1,120] 
+arrFactorial([5 , 0, 6])     -> [120, 1, 720] 
+arrFactorial([])       -> [] 
+*/
+
+const arrFactorial = array => array.map(x => {
+    let factorial = 1
+    for (let i = 1; i <= x; i++){
+        factorial *= i
+    }
+    return factorial;
+})
+
+console.log(arrFactorial([1, 2, 3 ,4]));
+console.log(arrFactorial([5 , 0, 6]));
+
+
+/*
+Sum Of Digits 
+Write a function named sumOfDigits() which takes a string argument and returns sum of all 
+digits from the original string.  
+ 
+Examples: 
+sumOfDigits("Javascript")       -> 0 
+sumOfDigits("John’s age is 29")     -> 11 
+sumOfDigits("$125.0")       -> 8 
+sumOfDigits("")         -> 0
+*/
+
+const sumOfDigits = array => {
+    let num = 0;
+    for (const word of array){
+        if (Number(word)) num += Number(word)
+    }
+    return num;
+}
+console.log(sumOfDigits("John's age is 29"));
+
+
+
+/*
+Remove Duplicates 
+Write a function named removeDuplicates() which takes an array argument and returns a new 
+array with all the duplicates removed. 
+ 
+Examples: 
+removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])      -> [10, 20, 35, 60, 70] 
+removeDuplicates([1, 2, 5, 2, 3])           -> [1, 2, 5, 3] 
+removeDuplicates([0, -1, -2, -2, -1])         -> [0, -1, -2] 
+removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"] 
+removeDuplicates(["1", "2", "3", "2", "3"])         -> ["1", "2", "3"] 
+ */
+
+// First way
+const removeDuplicates1 = array => array.filter((value, index) => {
+    return (array.indexOf(value) === index);
+})
+
+console.log(removeDuplicates1([10, 20, 35, 20, 35, 60, 70, 60]));
+
+
+// Second way
+const removeDuplicates2 = array => {
+    let arr = []
+    array.forEach(i => {
+        if (!arr.includes(i)) arr.push(i);
+    })
+    return arr
+}
+console.log(removeDuplicates2([10, 20, 35, 20, 35, 60, 70, 60]));
+
+
+
+/*
+Find All Duplicate Elements 
+Write a function named as getDuplicates() which takes an array argument and returns all the 
+duplicated elements in the array when invoked. 
+NOTE: Make your code dynamic that works for any array and return empty array if there are no 
+duplicates in the array. For two elements to be considered as duplicated, value and data types 
+of the elements must be same. 
+ 
+Examples: 
+getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])      -> [ 0, -7 ] 
+getDuplicates([ 1, 2, 5, 0, 7 ])          -> [ ] 
+getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])    -> [ 'foo', 'a’ ] 
+getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])       -> [ ] 
+*/
+
+
+function getDuplicates (array){
+    let arr = [];
+    for (let i = 0;i <= array.length; i++){
+        let duplicate = array[i]
+        let rest = array.slice(i + 1)
+        if (rest.includes(duplicate)){
+            if (!arr.includes(duplicate))
+            arr.push(duplicate)
+        }
+    }
+    return arr
+}
+
+console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
+
+
+
+/*
+Add Two Arrays 
+Write a function named add() which takes two array of numbers as argument and returns a new 
+array with sum of given arrays elements. 
+NOTE: Be careful about the array sizes as they could be different. 
+ 
+Examples: 
+add([3, 0, 0, 7, 5, 10], [6, 3, 2])         -> [9, 3, 2, 7, 5, 10] 
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])     -> [16, 11, 9,  3, 2, 7, 5, 10, 34] 
+add([-5, 6, -3, 11], [5, -6, 3, -11])         -> [0, 0, 0, 0]
+*/
+
+const add1 = (arr1,arr2) => {
+    if (arr2.length >= arr1.length) [arr1,arr2] = [arr2,arr1]
+    for (let i = 0; i < arr2.length; i++){
+        arr1[i] += arr2[i]
+    }
+    return arr1;
+}
+
+console.log(add1([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+console.log(add1([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+/*
+No Elements With A 
+Write a function named noA() which takes an array of strings as argument and will return a 
+new array with all elements starting with "A" or "a" replaced with "###". 
+ 
+Examples: 
+noA(["javascript", "hello", "123", "xyz"])     ->  ["javascript", "hello", "123", "xyz"] 
+noA(["apple", "123", "ABC", "javascript"])     ->  ["###", "123", "###", "javascript"] 
+noA(["apple", "abc", "ABC", "Alex", "A"])     ->  ["###", "###", "###", "###", "###"]
+*/
+
+const noA1 = array => array.map(x => {
+    if (x.includes('a')) {
+        return '###'
+    }
+    else return array
+})
+console.log(noA1(["javascript", "hello", "123", "xyz"]));
+
+
+
+/*First Duplicate Element 
+Write a function named as firstDuplicate() which takes an array argument and returns the first 
+duplicated number in the array when invoked. 
+NOTE: Make your code dynamic that works for any array and return -1 if there are no duplicates 
+in the array. For two elements to be considered as duplicated, value and data types of the 
+elements must be same. 
+ 
+Examples: 
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])      -> 3 
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])      -> 5 
+firstDuplicate([ 5, '5', 3, 7, 4 ])      -> -1 
+firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])    -> 'abc' 
+firstDuplicate([ 1, 2, 3])        -> -1 
+firstDuplicate([ 'foo', 'abc', '123', 'bar’ ])     -> -1
+*/
+
+
+function firstDuplicate (array) {
+    let arr = null;
+    for (let i = 0; i < array.length; i++){
+        let first = array[i]
+        let rest = array.slice(i + 1);
+        if (rest.includes(first))
+        arr = first
+        break
+    }
+    if (arr === null) return -1 
+    else return arr
+}
+
+
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
+console.log(firstDuplicate([1, 2, 3]));
+
+
+
+/*
+Prime Number 
+Write a function named as isPrime() which takes a number as an argument and returns true if 
+the number is prime or returns false otherwise when invoked. 
+NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. It 
+cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even 
+prime number. 
+Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31... 
+NOTE: The smallest prime number is 2 and there is no negative prime numbers. 
+ 
+Examples: 
+isPrime(5)   -> true 
+isPrime(2)   -> true 
+isPrime(29)   -> true 
+isPrime(-5)  -> false 
+isPrime(0)  -> false 
+isPrime(1)  -> false
+*/
+
+function count(string) {
+    let str = string.split(' ')
+    let count = 0;
+    for (const word of str){
+        if (word.length <= 3) count ++;
+    }
+    return count;
+}
+
+console.log(count("JavaScript is fun"));
+console.log(count("My name is John Doe"));
+
+/*
+Count Multiple Words 
+Write a function named as countMultipleWords() which takes an array as an argument and 
+returns the count of the elements that has multiple words when invoked. 
+NOTE: Be careful about the extra whitespaces before and after the array element. 
+ 
+Examples: 
+countMultipleWords([ "foo", "", "  ", "foo bar", "   foo" ])     -> 1 
+countMultipleWords([ "foo", "bar", "foobar", "   foobar   " ])     -> 0 
+countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])     -> 4 
+countMultipleWords([ ])               -> 0
+*/
+
+function countMultipleWords(array){
+    let count = 0;
+    array.filter(x =>{
+        if (x.trim().includes(' ')) count++;
+    })
+    return count
+}
+
+console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
+
+
+/*
+Prime Number 
+Write a function named as isPrime() which takes a number as an argument and returns true if 
+the number is prime or returns false otherwise when invoked. 
+NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. It 
+cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even 
+prime number. 
+Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31... 
+NOTE: The smallest prime number is 2 and there is no negative prime numbers. 
+ 
+Examples: 
+isPrime(5)   -> true 
+isPrime(2)   -> true 
+isPrime(29)   -> true 
+isPrime(-5)  -> false 
+isPrime(0)  -> false 
+isPrime(1)  -> false 
+
+*/
+
+
+/*Array Factorial 
+Write a function named arrFactorial() which takes an array of numbers as argument and return 
+the array with every number replaced with their factorials. 
+ 
+Examples: 
+arrFactorial([1, 2, 3 ,4])     -> [1, 2, 6, 24] 
+arrFactorial([0, 5])       -> [1,120] 
+arrFactorial([5 , 0, 6])     -> [120, 1, 720] 
+arrFactorial([])       -> []
+*/
+
+const arrFactorial1 = array => array.map(x => {
+   let factorial = 1;
+    for (let i = 1; i <= x; i++){
+        factorial *= i
+    }
+    return factorial
+    })
+
+    console.log(arrFactorial1([1, 2, 3 ,4]));
+
+
+   
