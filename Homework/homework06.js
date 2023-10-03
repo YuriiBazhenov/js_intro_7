@@ -253,13 +253,8 @@ removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ["abc", "xyz",
 "123", "ab", "ABC"]
 removeDuplicates(["1", "2", "3", "2", "3"])  -> ["1", "2", "3"]
 */
+const removeDuplicates = array => array.filter((value, index) => array.indexOf(value) === index)
 
-const removeDuplicates = array => {
-    return array.filter((value, index) => {
-        return array.indexOf(value) === index
-
-    })
-}
 console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
 console.log(removeDuplicates([1, 2, 5, 2, 3]));
 console.log(removeDuplicates([0, -1, -2, -2, -1]));

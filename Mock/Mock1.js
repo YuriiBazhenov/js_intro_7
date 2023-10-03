@@ -269,12 +269,12 @@ getMultipleOf5(2, 4)      -> [ ]
 
 function getMultipleOf5 (ar1,ar2){
     let arr = [];
-    for (let i = Math.max(ar1,ar2); i <= Math.min(ar1,ar2); i++){
+    for (let i = Math.min(ar1,ar2); i <= Math.max(ar1,ar2); i++){
         if (i % 5 === 0) arr.push(i)
     }
     return arr;
 }
-console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(25, 5));
 
 
 
@@ -757,6 +757,7 @@ function firstDuplicate (array) {
 
 console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
 console.log(firstDuplicate([1, 2, 3]));
+console.log(firstDuplicate([1, 2, 3, 4, 3, 4, 5, 5]));
 
 
 
@@ -855,7 +856,7 @@ const arrFactorial1 = array => array.map(x => {
     return factorial
     })
 
-    console.log(arrFactorial1([1, 2, 3 ,4]));
+    console.log(arrFactorial1([1, 2, 3, 4, 5]));
 
 
    

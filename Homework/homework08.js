@@ -192,12 +192,9 @@ getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )  -> ["C#"]
 function getCommons(arr1, arr2){
     let common = new Set()
     for (const word of arr1){
-        if (arr2.includes(word)){
+        if (arr2.includes(word))
             common.add(word)
-            
-        }
-    
-    }
+      }
     return [...common]
 }
 
