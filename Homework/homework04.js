@@ -303,15 +303,11 @@ function getDuplicates(x) {
     for (let i = 0; i < x.length; i++) {
         let duplicate = x[i];
         let rest = x.slice(i + 1)
-        if (rest.includes(duplicate)) {
-            if (!duplicates.includes(duplicate))
-                duplicates.push(duplicate);
-
-        }
-    }
-    return duplicates;
+        if (rest.includes(duplicate) && (!duplicates.includes(duplicate))) duplicates.push(duplicate)
+    
 }
-
+return duplicates
+}
 
 
 console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
@@ -450,3 +446,8 @@ console.log(fizzBuzz(12, 5));
 console.log(fizzBuzz(9, 6));
 
 
+function reverseStringWords(string){
+    return string.split(' ').map(x => x.split('').reverse().join('')).join(' ')
+}
+console.log(reverseStringWords('Hello'))
+console.log(reverseStringWords('I like Javascript'))

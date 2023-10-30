@@ -96,7 +96,6 @@ function findSumNumbers(string) {
     let num3 = 0
     for (const num of sum1) {
         num3 += Number(num)
-
     }
     return num3
 }
@@ -225,23 +224,42 @@ findUniques([-1, -2], [1, 2])  -> [-1, -2, 1, 2]
 */
 
 
+/*
 const findUniques = (arr1, arr2) => {
     const a = arr1.filter((value, index) => arr1.indexOf(value) === index)
     const b = arr2.filter((value, index) => arr2.indexOf(value) === index)
     const unic = a.concat(b);
     const u = []
-    console.log(unic)
     for(const el of unic){
         if(!a.includes(el) || !b.includes(el)) u.push(el)
     }
-    return console.log(u)
+    return u
 
 }
-findUniques([], []);
-findUniques([], [1, 2, 3, 2]);
-findUniques([1, 2, 3, 4], [3, 4, 5, 5]);
-findUniques([8, 9], [9, 8, 9]);
-findUniques([-1, -2], [1, 2]);
+console.log(findUniques([], []));
+console.log(findUniques([], [1, 2, 3, 2]));
+console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+console.log(findUniques([8, 9], [9, 8, 9]));
+console.log(findUniques([-1, -2], [1, 2]));
+*/
+
+
+const findUniques = (arr1,arr2) => {
+    let arr4 = [...arr1,...arr2]
+   let unic = arr4.filter((value,index) => arr4.indexOf(value) === index)
+   const empty = []
+   for (const el of unic){
+    if (!arr1.includes(el) || !arr2.includes(el)) empty.push(el)
+   }
+return empty
+
+}
+
+console.log(findUniques([], []));
+console.log(findUniques([], [1, 2, 3, 2]));
+console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+console.log(findUniques([8, 9], [9, 8, 9]));
+console.log(findUniques([-1, -2], [1, 2]));
 
 
 

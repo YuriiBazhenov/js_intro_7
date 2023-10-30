@@ -717,6 +717,7 @@ let string = 'Hello World JavaScript!';
 let string1 = string.split("").reverse().join("")
 let string2 = string1.split(" ").reverse().join(" ")
 
+console.log(string1);
 console.log(string2);
 
 

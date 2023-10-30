@@ -160,13 +160,8 @@ removeArraySpecialsDigits(["Automation", "123#$%tool"])  -> ["Automation",
 
 
 const removeArraySpecialsDigits = string => {
-  return string.map(x => {
-    let word = ''
-    for (const char of x){
-        if ((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || (char === " ")) word += char
-    }
-    return word
-  })
+  return string.map(str => str.split('').filter(char => char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z').join(''))
+   
   
 }
 
@@ -188,7 +183,7 @@ getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] )
 getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )  -> ["C#"]
 */
 
-
+/*
 function getCommons(arr1, arr2){
     let common = new Set()
     for (const word of arr1){
@@ -201,6 +196,20 @@ function getCommons(arr1, arr2){
 console.log(getCommons( ["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
 console.log(getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"]))
 console.log(getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+*/
+const getCommons = (str1,str2) => {
+   const str4 = str1.filter(el => str2.includes(el))
+   return str4.filter((x, y) =>{
+    return str4.indexOf(x) === y;
+   })
+}
+
+console.log(getCommons( ["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
+console.log(getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+console.log(getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"]))
+
+
+
 
 /*
 Requirement:

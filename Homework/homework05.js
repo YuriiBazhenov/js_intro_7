@@ -490,3 +490,20 @@ let date = new Date;
 console.log(date);
 
 
+
+const hasVowel = string => string.split('').some(x => 'AEOUIaeoui'.includes(x))
+console.log(hasVowel("Javascript"))
+
+
+
+
+
+function getEvens (n1, n2){
+    let arr = []
+    for (let i = Math.max(n1,n2); i < Math.min(n1,n2); i--){
+    if ( i % 5 === 0) arr.push(i)
+    }
+    return arr
+    }
+    
+    console.log(getEvens(23, 5))

@@ -181,6 +181,7 @@ categorizeCharacters("abc123$#%")  -> [ 'abc', '123', '$#%' ]
 categorizeCharacters("12ab$%3c%")  -> [ 'abc', '123', '$%%' ]
 */
 
+/*
 function categorizeCharacters(string) {
     let arr = [];
     let arr1 = [];
@@ -196,8 +197,21 @@ function categorizeCharacters(string) {
 console.log(categorizeCharacters("1234"));
 console.log(categorizeCharacters("abc123$#%"));
 console.log(categorizeCharacters("12ab$%3c%"));
+*/
 
 
+const categorizeCharacters = string =>{
+  return string.split('').reduce((element, index) => {
+        if (index.toLowerCase() >= 'a' && index.toLowerCase() <= 'z') element[0] += index;
+        else if (index >= '0' && index <= '9') element[1] += index
+        else element[2] += index
+        return element
+    }, ['', '', ''])
+}
+
+console.log(categorizeCharacters("1234"));
+console.log(categorizeCharacters("abc123$#%"));
+console.log(categorizeCharacters("12ab$%3c%"));
 
 
 

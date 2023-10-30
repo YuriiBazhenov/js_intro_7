@@ -167,21 +167,6 @@ isPalindrome("A")  -> true
 isPalindrome("")  -> true
 */
 
-/*
-function isPalindrome(string) {
-    let word = string.split('').reverse().toString().replaceAll(',', '')
-    return word.toLowerCase() === string.toLowerCase()
-}
-
-console.log(isPalindrome("Hello"));
-console.log(isPalindrome("Kayak"));
-console.log(isPalindrome("civic"));
-console.log(isPalindrome("abba"));
-console.log(isPalindrome("ab  a"));
-console.log(isPalindrome("123454321"));
-console.log(isPalindrome("A"));
-console.log(isPalindrome(""));
-*/
 
 const isPalindrome = array => {
     let pal = '';

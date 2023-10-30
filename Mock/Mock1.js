@@ -17,8 +17,8 @@ doubleOrTripleWord("22")       -> "222222"
 
 const doubleOrTripleWord = word => {
     if (word.length % 2 === 0) return word + word + word
-    else if (word.length % 2 !==0) return word + word
-    
+    else if (word.length % 2 !== 0) return word + word
+
 }
 console.log(doubleOrTripleWord("Tech"));
 
@@ -36,7 +36,7 @@ firstLastWord("")         -> ""
 firstLastWord("  ")       -> ""
 */
 
-function firstLastWord(string){
+function firstLastWord(string) {
     return string.slice(0, string.indexOf(" ")) + string.slice(string.lastIndexOf(" ") + 1);
 }
 console.log(firstLastWord("Hello World"));
@@ -92,15 +92,15 @@ startVowel("123")     -> false
 */
 
 
-function startVowel(string){
-    for (const str of string){
+function startVowel(string) {
+    for (const str of string) {
         if ('AEOUIaeoui'.startsWith(str)) return true
     }
     return false
 }
 
 console.log(startVowel("Apple"));
-console.log(startVowel("Hello") );
+console.log(startVowel("Hello"));
 
 /*
 Task 5
@@ -116,12 +116,12 @@ averageOfEdges(-3, 15, -3)   -> 6
 averageOfEdges(10, 13, 20)   -> 15
 */
 
-function averageOfEdges(n1,n2,n3){
-    return (Math.max(n1,n2,n3) + Math.min(n1,n2,n3)) / 2
-   
+function averageOfEdges(n1, n2, n3) {
+    return (Math.max(n1, n2, n3) + Math.min(n1, n2, n3)) / 2
+
 }
 console.log(averageOfEdges(0, 0, 6));
-console.log(averageOfEdges(-3, 15, -3) );
+console.log(averageOfEdges(-3, 15, -3));
 console.log(averageOfEdges(10, 13, 20));
 
 
@@ -140,8 +140,8 @@ replaceFirstLast("A")       -> ""
 replaceFirstLast("    A      ")      -> ""
 */
 
-function replaceFirstLast(string){
-    return string.slice(-1) + string.slice(1,-1) + string[0]
+function replaceFirstLast(string) {
+    return string.slice(-1) + string.slice(1, -1) + string[0]
 }
 console.log(replaceFirstLast("Tech Global"));
 
@@ -163,8 +163,8 @@ swap4("Apple")       -> ""
 
 function swap4(word) {
     if (word.length < 8) return "";
-    return word.slice(word.length -4) + word.slice(4, word.length-4) + word.slice(0, 4);
-  
+    return word.slice(word.length - 4) + word.slice(4, word.length - 4) + word.slice(0, 4);
+
 }
 console.log(swap4("abc"));
 console.log(swap4("JavaScript"));
@@ -194,11 +194,11 @@ swapFirstLastWord("Hello   ")       -> ""
 
 
 
-function swapFirstLastWord (string) {
-    if (string.trim().includes(' ')) return string.slice(string.lastIndexOf(" ") +1) + string.slice(string.indexOf(' '), string.lastIndexOf(' ') +1) + string[0];
-    else return "" 
+function swapFirstLastWord(string) {
+    if (string.trim().includes(' ')) return string.slice(string.lastIndexOf(" ") + 1) + string.slice(string.indexOf(' '), string.lastIndexOf(' ') + 1) + string[0];
+    else return ""
 }
-console.log(swapFirstLastWord("I like JavaScript") );
+console.log(swapFirstLastWord("I like JavaScript"));
 
 
 /*
@@ -213,10 +213,10 @@ countPos([-23, -4, 0, 2, 5, 90, 123])   -> 4
 countPos([0, -1, -2, -3])       -> 0 
  */
 
-function countPos (array){
+function countPos(array) {
     let count = 0;
-    for(const num of array){
-        if (num > 0) count ++;
+    for (const num of array) {
+        if (num > 0) count++;
     }
     return count;
 }
@@ -241,9 +241,9 @@ getEvens(3, 3)    -> [ ]
 */
 
 
-function getEvens(ar1, ar2){
+function getEvens(ar1, ar2) {
     let arr = [];
-    for(let i = Math.min(ar1,ar2); i <= Math.max(ar1,ar2);i ++ ){
+    for (let i = Math.max(ar1, ar2); i >= Math.min(ar1, ar2); i--) {
         if (i % 5 === 0) arr.push(i)
     }
     return arr;
@@ -267,9 +267,9 @@ getMultipleOf5(5, 5)      -> [ 5 ]
 getMultipleOf5(2, 4)      -> [ ]
 */
 
-function getMultipleOf5 (ar1,ar2){
+function getMultipleOf5(ar1, ar2) {
     let arr = [];
-    for (let i = Math.min(ar1,ar2); i <= Math.max(ar1,ar2); i++){
+    for (let i = Math.min(ar1, ar2); i <= Math.max(ar1, ar2); i++) {
         if (i % 5 === 0) arr.push(i)
     }
     return arr;
@@ -294,12 +294,12 @@ countWords("1 2 3 4")
 */
 
 
-function countWords (string){
+function countWords(string) {
     return string.trim().split(' ').length
-    
+
 }
 console.log(countWords("Cypress is an UI automation tool.    "));
-console.log(countWords("     Javascript is fun       ") );
+console.log(countWords("     Javascript is fun       "));
 
 
 
@@ -317,15 +317,15 @@ count3OrLess("My name is John Doe")     -> 3
 count3OrLess("")           -> 0
 */
 
-function count3OrLess (string){
+function count3OrLess(string) {
     let str = string.split(' ')
     let count = 0;
-    for (const word of str){
+    for (const word of str) {
         if (word.length <= 3 && word.length !== 0) count++;
-        }
-        return count++;
+    }
+    return count++;
 }
-  
+
 console.log(count3OrLess("Hello"));
 console.log(count3OrLess("Hi John"));
 console.log(count3OrLess("JavaScript is fun"));
@@ -347,15 +347,15 @@ removeDuplicates(["1", "2", "3", "2", "3"])         -> ["1", "2", "3"]
 */
 
 
-const removeDuplicates = array => 
-    array.filter((value,index) =>{
+const removeDuplicates = array =>
+    array.filter((value, index) => {
         return array.indexOf(value) === index
-    }) 
-    console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+    })
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
 
 
-    /*
-    No Elements Equals 13 
+/*
+No Elements Equals 13 
 Write a function named no13() which takes an array of numbers as argument and return a new 
 array with all 13s replaced with 0s.  
  
@@ -366,8 +366,8 @@ no13([13, 13, 13 , 13, 13])     -> [0, 0, 0, 0, 0]
 no13([])         -> [] 
 */
 
-const no13 = array => array.map( x => x === 13 ? x = 0: x = x);
-console.log(no13([13, 2, 3]) );
+const no13 = array => array.map(x => x === 13 ? x = 0 : x = x);
+console.log(no13([13, 2, 3]));
 
 
 /*
@@ -385,18 +385,18 @@ no3and5([10, 11, 12, 13, 14, 15])     -> [99, 11, 100, 13, 14, 101]
 */
 
 const no3and5 = array => {
-return array.map(num => {
-    if (num % 15 === 0){
-    return 101
-    }
-    else if (num % 5 === 0){
-        return 99
-    }
-   else if (num % 3 === 0){
-        return 100
-    }
-    else return num
-})
+    return array.map(num => {
+        if (num % 15 === 0) {
+            return 101
+        }
+        else if (num % 5 === 0) {
+            return 99
+        }
+        else if (num % 3 === 0) {
+            return 100
+        }
+        else return num
+    })
 }
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
@@ -411,13 +411,13 @@ noA(["apple", "123", "ABC", "javascript"])     ->  ["###", "123", "###", "javasc
 noA(["apple", "abc", "ABC", "Alex", "A"])     ->  ["###", "###", "###", "###", "###"] 
 */
 
-const noA = array =>{
-    return array.map(x =>{
-        if (x.startsWith('a') || x.startsWith('A')){
+const noA = array => {
+    return array.map(x => {
+        if (x.startsWith('a') || x.startsWith('A')) {
             return '###'
         }
         else return x
-        
+
     })
 
 }
@@ -439,12 +439,12 @@ add([-5, 6, -3, 11], [5, -6, 3, -11])         -> [0, 0, 0, 0]
 
 
 
-const add = (arr1,arr2) => {
-    if (arr2.length > arr1.length) [arr1,arr2] = [arr2,arr1];
-    return arr1.map((value,index) => {
+const add = (arr1, arr2) => {
+    if (arr2.length > arr1.length) [arr1, arr2] = [arr2, arr1];
+    return arr1.map((value, index) => {
         return value + (arr2[index] || 0)
     })
-    
+
 }
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
@@ -463,9 +463,9 @@ countConsonants("JavaScript is fun")     -> 12
 countConsonants("")         -> 0
 */
 
-const countConsonants = string =>{
+const countConsonants = string => {
     let count = 0;
-    for (const str of string){
+    for (const str of string) {
         if (!"AEOUiaeoui".includes(str)) count++;
     }
     return count;
@@ -487,16 +487,16 @@ countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])     -> 4
 countMultipleWords([ ])  
 */
 
-function countMultipleWords (array){
-   let count = 0;
-   array.map(value => {
-    if (value.trim().includes(' ')) count++;
-   })
-return count;
+function countMultipleWords(array) {
+    let count = 0;
+    array.map(value => {
+        if (value.trim().includes(' ')) count++;
+    })
+    return count;
 }
 
-console.log(countMultipleWords([ "foo", "", "  ", "foo bar", "   foo" ]));
-console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
+console.log(countMultipleWords(["foo", "", "  ", "foo bar", "   foo"]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", "     foo bar   "]));
 
 /*
 FizzBuzz 
@@ -519,15 +519,15 @@ fizzBuzz(5, 5)    -> "Buzz"
 fizzBuzz(9, 6)    -> "Fizz | 7 | 8 | Fizz" 
 */
 
-function fizzBuzz (r1,r2){
+function fizzBuzz(r1, r2) {
     let array = [];
-    for (let i = Math.min(r1,r2); i <= Math.max(r1,r2);i++){
-    if (i % 15 === 0) array.push('FizzBuzz')
-    else if(i % 5 === 0) array.push('Buzz')
-    else if (i % 3 === 0) array.push('Fizz')
-    else array.push(i)
+    for (let i = Math.min(r1, r2); i <= Math.max(r1, r2); i++) {
+        if (i % 15 === 0) array.push('FizzBuzz')
+        else if (i % 5 === 0) array.push('Buzz')
+        else if (i % 3 === 0) array.push('Fizz')
+        else array.push(i)
     }
-return array;
+    return array;
 }
 
 
@@ -553,13 +553,12 @@ isPalindrome("A")   -> true
 isPalindrome("")   -> true
 */
 
-function palindrome(string){
+function palindrome(string) {
     let arr = '';
-    for (let i = string.length -1; i >= 0;i--){
+    for (let i = string.length - 1; i >= 0; i--) {
         arr += string[i]
-        if (arr === string) return true
     }
-    return false
+    return (arr.toLowerCase() === string.toLowerCase())
 }
 console.log(palindrome('kayak'));
 console.log(palindrome('hello'));
@@ -582,14 +581,14 @@ arrFactorial([])       -> []
 
 const arrFactorial = array => array.map(x => {
     let factorial = 1
-    for (let i = 1; i <= x; i++){
+    for (let i = 1; i <= x; i++) {
         factorial *= i
     }
     return factorial;
 })
 
-console.log(arrFactorial([1, 2, 3 ,4]));
-console.log(arrFactorial([5 , 0, 6]));
+console.log(arrFactorial([1, 2, 3, 4]));
+console.log(arrFactorial([5, 0, 6]));
 
 
 /*
@@ -606,7 +605,7 @@ sumOfDigits("")         -> 0
 
 const sumOfDigits = array => {
     let num = 0;
-    for (const word of array){
+    for (const word of array) {
         if (Number(word)) num += Number(word)
     }
     return num;
@@ -664,14 +663,14 @@ getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])       -> [ ]
 */
 
 
-function getDuplicates (array){
+function getDuplicates(array) {
     let arr = [];
-    for (let i = 0;i <= array.length; i++){
+    for (let i = 0; i <= array.length; i++) {
         let duplicate = array[i]
         let rest = array.slice(i + 1)
-        if (rest.includes(duplicate)){
+        if (rest.includes(duplicate)) {
             if (!arr.includes(duplicate))
-            arr.push(duplicate)
+                arr.push(duplicate)
         }
     }
     return arr
@@ -693,9 +692,9 @@ add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])     -> [16, 11, 9,  3, 2, 7
 add([-5, 6, -3, 11], [5, -6, 3, -11])         -> [0, 0, 0, 0]
 */
 
-const add1 = (arr1,arr2) => {
-    if (arr2.length >= arr1.length) [arr1,arr2] = [arr2,arr1]
-    for (let i = 0; i < arr2.length; i++){
+const add1 = (arr1, arr2) => {
+    if (arr2.length >= arr1.length) [arr1, arr2] = [arr2, arr1]
+    for (let i = 0; i < arr2.length; i++) {
         arr1[i] += arr2[i]
     }
     return arr1;
@@ -703,6 +702,7 @@ const add1 = (arr1,arr2) => {
 
 console.log(add1([3, 0, 0, 7, 5, 10], [6, 3, 2]));
 console.log(add1([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+console.log(add1([-5, 6, -3, 11], [5, -6, 3, -11]));
 /*
 No Elements With A 
 Write a function named noA() which takes an array of strings as argument and will return a 
@@ -714,13 +714,18 @@ noA(["apple", "123", "ABC", "javascript"])     ->  ["###", "123", "###", "javasc
 noA(["apple", "abc", "ABC", "Alex", "A"])     ->  ["###", "###", "###", "###", "###"]
 */
 
-const noA1 = array => array.map(x => {
-    if (x.includes('a')) {
-        return '###'
-    }
-    else return array
-})
+const noA1 = array => {
+    return array.map(str => {
+        if (str.startsWith("a" || str.startsWith("A"))) {
+            return '###'
+        }
+        else return str
+    })
+
+}
+
 console.log(noA1(["javascript", "hello", "123", "xyz"]));
+console.log(noA1(["apple", "abc", "ABC", "Alex", "A"]));
 
 
 
@@ -741,17 +746,14 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ])     -> -1
 */
 
 
-function firstDuplicate (array) {
-    let arr = null;
-    for (let i = 0; i < array.length; i++){
+function firstDuplicate(array) {
+
+    for (let i = 0; i < array.length; i++) {
         let first = array[i]
         let rest = array.slice(i + 1);
-        if (rest.includes(first))
-        arr = first
-        break
+        if (rest.includes(first)) return array[i]
     }
-    if (arr === null) return -1 
-    else return arr
+    return -1
 }
 
 
@@ -783,8 +785,8 @@ isPrime(1)  -> false
 function count(string) {
     let str = string.split(' ')
     let count = 0;
-    for (const word of str){
-        if (word.length <= 3) count ++;
+    for (const word of str) {
+        if (word.length <= 3) count++;
     }
     return count;
 }
@@ -805,15 +807,15 @@ countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])     -> 4
 countMultipleWords([ ])               -> 0
 */
 
-function countMultipleWords(array){
+function countMultipleWords(array) {
     let count = 0;
-    array.filter(x =>{
+    array.filter(x => {
         if (x.trim().includes(' ')) count++;
     })
     return count
 }
 
-console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", "     foo bar   "]));
 
 
 /*
@@ -849,14 +851,366 @@ arrFactorial([])       -> []
 */
 
 const arrFactorial1 = array => array.map(x => {
-   let factorial = 1;
-    for (let i = 1; i <= x; i++){
+    let factorial = 1;
+    for (let i = 1; i <= x; i++) {
         factorial *= i
     }
     return factorial
+})
+
+console.log(arrFactorial1([1, 2, 3, 4, 5]));
+
+
+
+/*
+Write a function named as removeExtraSpaces() which takes a string word as an argument 
+and returns the string back with all extra spaces removed when invoked. 
+ 
+Examples: 
+removeExtraSpaces("Hello")           -> "Hello" 
+removeExtraSpaces("    Hello    World  ")       -> "Hello World" 
+removeExtraSpaces("   JavaScript is        fun")    -> "JavaScript is fun” 
+removeExtraSpaces("")             -> ""
+*/
+
+const removeExtraSpaces = string => {
+    return string.split(' ').filter(x => x.length >= 1).join(' ')
+}
+
+console.log(removeExtraSpaces("    Hello    World  "));
+
+
+/*
+Write a function named arrFactorial() which takes an array of numbers as argument and return 
+the array with every number replaced with their factorials. 
+ 
+Examples: 
+arrFactorial([1, 2, 3 ,4])     -> [1, 2, 6, 24] 
+arrFactorial([0, 5])       -> [1,120] 
+arrFactorial([5 , 0, 6])     -> [120, 1, 720] 
+arrFactorial([])       -> []
+*/
+
+const arrFactoriall = array => array.map(x => {
+    let factorial = 1;
+    for (let i = 1; i <= x; i++) {
+        factorial *= i
+    }
+    return factorial
+})
+
+console.log(arrFactoriall([5, 0, 6]));
+
+
+
+/*
+Write a function named sumOfDigits() which takes a string argument and returns sum of all 
+digits from the original string.  
+ 
+Examples: 
+sumOfDigits("Javascript")       -> 0 
+sumOfDigits("John’s age is 29")     -> 11 
+sumOfDigits("$125.0")       -> 8 
+sumOfDigits("")         -> 0
+*/
+
+
+function sumOfDigits1(string) {
+    let sum = 0;
+    for (const char of string) {
+        if (Number(char)) sum += Number(char)
+    }
+    return sum
+}
+
+console.log(sumOfDigits1("John's age is 29"));
+
+
+
+/*
+Write a function named noVowel() which takes a string argument and returns a new string 
+with all vowels removed from the original string. 
+ 
+Examples: 
+noVowel("TechGlobal")   -> "TchGlbl" 
+noVowel("AEOxyz")   -> "xyz" 
+noVowel("Javascript")   -> "Jvscrpt" 
+noVowel("")   -> "" 
+noVowel("125$")   -> "125$"
+*/
+
+
+const noVowel = string => string.split('').filter(x => !('AEOUIaeoui'.includes(x))).join('')
+
+
+console.log(noVowel("TechGlobal"));
+
+
+/*
+Write a function named noDigit() which takes a string argument and returns a new string with 
+all digits removed from the original string. 
+ 
+Examples: 
+noDigit("")           -> "" 
+noDigit("Javascript")       -> "Javascript" 
+noDigit("123Hello")         -> "Hello" 
+noDigit("123Hello World149")     -> "Hello World” 
+noDigit("123Tech456Global149")     -> "TechGlobal"
+*/
+
+const noDigit = string => string.split('').filter(x => !('123456789'.includes(x))).join('')
+console.log(noDigit("123Tech456Global149"));
+
+
+
+/*
+Write a function named removeDuplicates() which takes an array argument and returns a new 
+array with all the duplicates removed. 
+ 
+Examples: 
+removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60])      -> [10, 20, 35, 60, 70] 
+removeDuplicates([1, 2, 5, 2, 3])           -> [1, 2, 5, 3] 
+removeDuplicates([0, -1, -2, -2, -1])         -> [0, -1, -2] 
+removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"] 
+removeDuplicates(["1", "2", "3", "2", "3"])         -> ["1", "2", "3"]
+*/
+
+
+const removeDuplicatess = array => {
+    let arr = new Set()
+    for (const number of array) {
+        arr.add(number)
+    }
+    return [...arr]
+}
+
+console.log(removeDuplicatess([10, 20, 35, 20, 35, 60, 70, 60]));
+
+
+
+/*
+No Elements Equals 13 
+Write a function named no13() which takes an array of numbers as argument and return a new 
+array with all 13s replaced with 0s.  
+ 
+Examples: 
+no13([1, 2, 3 ,4])       -> [1, 2, 3 ,4]  
+no13([13, 2, 3])       -> [0, 2, 3] 
+no13([13, 13, 13 , 13, 13])     -> [0, 0, 0, 0, 0] 
+no13([])         -> [] 
+*/
+
+const noo13 = array => array.map(x => x === 13 ? x = 0 : x)
+
+console.log(noo13([13, 2, 3]));
+
+
+/*
+No Elements Divisible By 3 and 5 
+Write a function named no3and5() which takes an array of integer numbers as argument and 
+will return a new array with elements replaced by conditions below. 
+If element can be divided by 5, replace it with 99 
+If element can be divided by 3, replace it with 100 
+If element can be divided by both 3 and 5, replace it with 101 
+ 
+Examples: 
+no3and5([7, 4, 11, 23, 17])       -> [7, 4, 11, 23, 17] 
+no3and5([3, 4, 5, 6])       -> [100, 4, 99, 100] 
+no3and5([10, 11, 12, 13, 14, 15])     -> [99, 11, 100, 13, 14, 101]
+*/
+
+const noo3and5 = array => {
+    let arr = []
+    for (const number of array) {
+        if (number % 15 === 0) arr.push(101)
+        else if (number % 5 === 0) arr.push(99)
+        else if (number % 3 === 0) arr.push(100)
+        else arr.push(number)
+    }
+    return arr;
+}
+
+console.log(noo3and5([10, 11, 12, 13, 14, 15]))
+
+
+
+/*
+Write a function named noA() which takes an array of strings as argument and will return a 
+new array with all elements starting with "A" or "a" replaced with "###". 
+ 
+Examples: 
+noA(["javascript", "hello", "123", "xyz"])     ->  ["javascript", "hello", "123", "xyz"] 
+noA(["apple", "123", "ABC", "javascript"])     ->  ["###", "123", "###", "javascript"] 
+noA(["apple", "abc", "ABC", "Alex", "A"])     ->  ["###", "###", "###", "###", "###"]
+*/
+
+
+const noAa = array => {
+    return array.map(str => {
+        if (str.startsWith('A' || str.startsWith('a'))) {
+
+            return "###"
+        }
+        else return str
     })
 
-    console.log(arrFactorial1([1, 2, 3, 4, 5]));
+}
+
+console.log(noAa(["javascript", "hello", "123", "xyz"]))
+console.log(noAa(["apple", "abc", "ABC", "Alex", "A"]))
 
 
-   
+/*
+Write a function named add() which takes two array of numbers as argument and returns a new 
+array with sum of given arrays elements. 
+NOTE: Be careful about the array sizes as they could be different. 
+ 
+Examples: 
+add([3, 0, 0, 7, 5, 10], [6, 3, 2])         -> [9, 3, 2, 7, 5, 10] 
+add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])     -> [16, 11, 9,  3, 2, 7, 5, 10, 34] 
+add([-5, 6, -3, 11], [5, -6, 3, -11])         -> [0, 0, 0, 0]
+*/
+
+
+
+const addd = (arr1, arr2) => {
+    if (arr2.length >= arr1.length) [arr1, arr2] = [arr2, arr1]
+    for (let i = 0; i < arr2.length; i++) {
+        arr1[i] += arr2[i]
+    }
+    return arr1
+}
+
+console.log(addd([-5, 6, -3, 11], [5, -6, 3, -11]))
+
+
+
+/*
+Write a function named as isPalindrome() which takes a string word as an argument and 
+returns true if the word is palindrome or returns false otherwise when invoked. 
+NOTE: Palindrome: It is a word that is read the same backward as forward 
+Examples: kayak, civic, madam 
+NOTE: your function should ignore case sensitivity 
+ 
+Examples: 
+isPalindrome("Hello")   -> false 
+isPalindrome("Kayak")   -> true 
+isPalindrome("civic")   -> true 
+isPalindrome("abba")   -> true 
+isPalindrome("ab  a")   -> false 
+isPalindrome("123454321")   -> true 
+isPalindrome("A")   -> true 
+isPalindrome("")   -> true 
+*/
+
+const isPalindrome = string => {
+    let palindrome = '';
+    for (let i = string.length - 1; i >= 0; i--) {
+        palindrome += string[i]
+        if (palindrome.toLowerCase() === string.toLowerCase())
+            return true
+    }
+    return false
+}
+
+console.log(isPalindrome("Hello"))
+console.log(isPalindrome("civic"))
+
+
+/*
+Write a function named as fizzBuzz() which takes 2 number arguments and returns a string 
+composed with below requirements when invoked. 
+•  You need to find all the numbers within the range of given 2 numbers (both inclusive) 
+and store them in a string from smallest to greatest number with a ' | ' separator for each 
+number. 
+•  You will need to convert numbers divisible by 3 to 'Fizz' 
+•  You will need to convert numbers divisible by 5 to 'Buzz' 
+•  You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz’ 
+•  The rest will stay the same. 
+NOTE: Make your code dynamic that works for any numbers. 
+Assume you will not be given negative numbers. 
+ 
+Examples: 
+fizzBuzz(13, 18)    -> "13 | 14 | FizzBuzz | 16 | 17 | Fizz" 
+fizzBuzz(12, 5)    -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz" 
+fizzBuzz(5, 5)    -> "Buzz" 
+fizzBuzz(9, 6)    -> "Fizz | 7 | 8 | Fizz"
+*/
+
+const fizzBuzz = (num1, num2) => {
+    for (let i = Math.max(num1); i <= Math.min(num2); i++)
+    
+}
+
+
+
+function countA(string) {
+    let count = 0;
+    for (const char of string) {
+        if (char.toLowerCase().includes('a')) count++
+    }
+    return count;
+}
+
+console.log(countA('TechGlobal is a QA bootcamp'))
+
+function factorial(number) {
+    Factorial = 1;
+    for (let i = 1; i <= number; i++) {
+        Factorial *= i
+    }
+    return Factorial
+}
+console.log(factorial(5))
+
+
+
+const removeExtraSpaces1 = string => string.split(' ').filter(x => x.length >= 1).join(' ')
+console.log(removeExtraSpaces1('     Javascript is    fun   '))
+
+
+function midleInt(n1, n2, n3) {
+    return [n1, n2, n3].sort((a, b) => a - b)[1]
+}
+
+console.log(midleInt(1, 2, 2))
+
+
+function isPrime(number) {
+    if (number < 2) return false
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false
+    }
+    return true
+}
+
+console.log(isPrime(2))
+console.log(isPrime(4))
+console.log(isPrime(6))
+console.log(isPrime(10))
+console.log(isPrime(1))
+console.log(isPrime(0))
+console.log(isPrime(29))
+console.log(isPrime(7))
+
+
+function no3and50 (array){
+    let arr = [];
+    for (const x of array){
+    if (x % 15 === 0) arr.push(101)
+    else if (x % 5 === 0 ) arr.push(99)
+    else if (x % 3 === 0) arr.push (100)
+    else arr.push(x)
+    }
+    return arr
+}
+
+console.log(no3and50([10, 11, 12, 13, 14, 15]))
+
+
+
+const removeDuplicates0 = array => array.filter((value, index) =>{
+    return array.indexOf(value) === index
+})
+
+console.log(removeDuplicates0([10,20,35,20,35,60,70,60]))
