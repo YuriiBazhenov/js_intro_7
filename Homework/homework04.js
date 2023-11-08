@@ -263,7 +263,7 @@ function firstDuplicate(x) {
         let rest = x.slice(i + 1)
         if (rest.includes(duplicate)) {
             firstDuplicate1 = duplicate;
-            break;
+        break;
         }
     }
     if (firstDuplicate1 === null) return -1

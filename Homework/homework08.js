@@ -183,20 +183,7 @@ getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] )
 getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )  -> ["C#"]
 */
 
-/*
-function getCommons(arr1, arr2){
-    let common = new Set()
-    for (const word of arr1){
-        if (arr2.includes(word))
-            common.add(word)
-      }
-    return [...common]
-}
 
-console.log(getCommons( ["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
-console.log(getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"]))
-console.log(getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
-*/
 const getCommons = (str1,str2) => {
    const str4 = str1.filter(el => str2.includes(el))
    return str4.filter((x, y) =>{
