@@ -208,9 +208,9 @@ lastShortest(["white", "yellow", "brown"])  ->
 
 function lastShortest(array){
   let lastS = '';
-  let max = Infinity
+  let max = -Infinity
   for (const word of array){
-    if (word.length < max){
+    if (word.length > max){
       lastS = word
       max.length = word.length
     }
