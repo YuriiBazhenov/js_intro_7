@@ -409,9 +409,11 @@ function mostRepeated(array) {
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array.length; j++) {
             if (array[i] === array[j]) arr1.push(array[i])
+    
         }
         if (arr1.length > arr2.length) arr2 = arr1;
         arr1 = [];
+        
     }
     return arr2
 }

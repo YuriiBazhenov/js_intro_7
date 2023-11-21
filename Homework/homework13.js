@@ -13,16 +13,15 @@ countVC("")                           -> {vowels: 0, consonants: 0}
 
 
 const countVC = string => {
-    let count = 0
-    let count1 = 0
+    let result = { vowels: 0, consonants: 0 }
     for (const char of string.toLowerCase()) {
         if ((char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) && 'aeoui'.includes(char))
-            count++
+            result.vowels++
         else if ((char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) && !'aeoui'.includes(char))
-            count1++
+            result.consonants++
 
     }
-    return `{vowels:${count}, consonants:${count1}}`
+    return result
 }
 console.log(countVC("Hello"))
 console.log(countVC("Programming"))
@@ -48,26 +47,24 @@ countChars("")                                       -> {}
 */
 
 const countChars = string => {
-    let countLetters = 0
-    let countNumbers = 0
-    let countSpecials = 0
+    let result = { letters: 0, numbers: 0, specials: 0 }
     for (const char of string.toLowerCase()) {
-        if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122)
-            countLetters++
+        if (char.trim().charCodeAt(0) >= 97 && char.trim().charCodeAt(0) <= 122)
+            result.letters++
         else if ('0123456789'.includes(char))
-            countNumbers++
-        else countSpecials++
-    }
-    return `{letters:${countLetters}, numbers:${countNumbers}, specials:${countSpecials}}`
-}
+            result.numbers++
 
+        else if (char !== ' ')
+            result.specials++
+    }
+    return result
+}
 console.log(countChars("Hello"))
 console.log(countChars("Programming 123"))
 console.log(countChars("123AbC!@#"))
 console.log(countChars("0987654321"))
 console.log(countChars("     "))
 console.log(countChars(""))
-
 
 /*
 3
@@ -87,21 +84,29 @@ maxOccurrences("")    -> ""
 */
 
 
-const maxOccurrences = string => {
-    const empty = []
-    const newEmpty = []
+// const maxOccurrences = string => {
+//     const empty = []
+//    const empty1 = []
 
-    for (const el of string) {
-        if (!empty.includes(el))
-            empty.push(el)
-           
+//     for (let i = 0; i < string.length; i++) {
+//         if (!empty.includes(string[i]))
+//         empty.push(string[i])
+
+//     }
+//     return empty
+// }
+
+function maxOccurrences(array) {
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[i] === array[j]) arr1.push(array[i])
+        }
+
+
     }
-    
-    for (const el of empty){
-        if (!string.includes(el))
-        newEmpty.push(el)
-    }
-    return newEmpty
+    return arr1
 }
 
 console.log(maxOccurrences("Hello"))
@@ -111,9 +116,6 @@ console.log(maxOccurrences("    ab    "))
 console.log(maxOccurrences("12   3   21"))
 console.log(maxOccurrences("      "))
 console.log(maxOccurrences(""))
-
-
-
 
 
 /*
@@ -201,3 +203,4 @@ console.log(romanToInt("IXX"));
 
 
 
+console.log(-1 + 5)
