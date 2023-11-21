@@ -413,7 +413,7 @@ function mostRepeated(array) {
         if (arr1.length > arr2.length) arr2 = arr1;
         arr1 = [];
     }
-    return arr2[0];
+    return arr2
 }
 console.log(mostRepeated([3, 4, 7, 4, 4, 4, 23, 23, 23,]));
 console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));

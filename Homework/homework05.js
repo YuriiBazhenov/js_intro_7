@@ -500,10 +500,10 @@ console.log(hasVowel("Javascript"))
 
 function getEvens (n1, n2){
     let arr = []
-    for (let i = Math.max(n1,n2); i < Math.min(n1,n2); i--){
+    for (let i = Math.min(n1,n2); i > Math.max(n1,n2); i--){
     if ( i % 5 === 0) arr.push(i)
     }
     return arr
     }
     
-    console.log(getEvens(23, 5))
+    console.log(getEvens(5, 23))
