@@ -57,7 +57,7 @@ const countChars = string => {
         else if (char !== ' ')
             result.specials++
     }
-    return result
+   return result
 }
 console.log(countChars("Hello"))
 console.log(countChars("Programming 123"))
@@ -84,29 +84,18 @@ maxOccurrences("")    -> ""
 */
 
 
-// const maxOccurrences = string => {
-//     const empty = []
-//    const empty1 = []
 
-//     for (let i = 0; i < string.length; i++) {
-//         if (!empty.includes(string[i]))
-//         empty.push(string[i])
-
-//     }
-//     return empty
-// }
-
-function maxOccurrences(array) {
-    let arr1 = [];
-    let arr2 = [];
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-            if (array[i] === array[j]) arr1.push(array[i])
-        }
-
-
+function maxOccurrences(string) {
+    let empty = [];
+    if (string === '')
+    return ''
+    for (let i = 0; i < string.length; i++) {
+        first = string[i]
+        rest = string.slice([i+1])
+        if (rest.includes(first))
+        empty.push(first)
     }
-    return arr1
+    return empty[0]
 }
 
 console.log(maxOccurrences("Hello"))
@@ -116,6 +105,7 @@ console.log(maxOccurrences("    ab    "))
 console.log(maxOccurrences("12   3   21"))
 console.log(maxOccurrences("      "))
 console.log(maxOccurrences(""))
+
 
 
 /*
@@ -178,6 +168,7 @@ romanToInt("MDCLXVI")    -> 1666
 */
 
 
+
 const romanToInt = (str) => {
     const roman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 }
     let num = 0;
@@ -200,7 +191,5 @@ console.log(romanToInt("MDCLXVI"));
 console.log(romanToInt("IX"));
 console.log(romanToInt("IXX"));
 
+// console.log(-4 + 5 + 3 + 2 )
 
-
-
-console.log(-1 + 5)
