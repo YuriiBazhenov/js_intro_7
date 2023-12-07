@@ -193,3 +193,13 @@ console.log(romanToInt("IXX"));
 
 // console.log(-4 + 5 + 3 + 2 )
 
+
+
+const factorial = number => {
+    let num = 1
+    for (let i = 0; i < number; i++){
+        num *= i + 1
+    }
+    return num
+}
+console.log(factorial(5))
