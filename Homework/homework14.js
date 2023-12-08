@@ -49,17 +49,16 @@ isPerfectSquare(144)  -> true
 */
 
 const isPerfectSquare = number => {
-    let num1 = Math.sqrt(number)
-    return Math.floor(num1) * Math.floor(num1) === number
-}
+   return Math.floor(Math.sqrt(number)) * Math.floor(Math.sqrt(number)) === number
 
+}
 console.log(isPerfectSquare(25))
 console.log(isPerfectSquare(24))
 console.log(isPerfectSquare(0))
 console.log(isPerfectSquare(1))
 console.log(isPerfectSquare(-1));
 console.log(isPerfectSquare(144))
-console.log(isPerfectSquare(21))
+
 
 
 /*
@@ -81,12 +80,8 @@ convertTemperature(-40, 'Fahrenheit’)  -> -40
 */
 
 const convertTemperature = (number,string) => {
-    if (string === 'Celsius')
-   return (number * 9 / 5) + 32
-    else if (string === 'Fahrenheit')
-    return (number - 32) * 5 / 9
+   return string === 'Celsius' ? (number * 9 / 5) + 32 : (number -32) * 5 / 9
 }
-
 console.log(convertTemperature(100, 'Celsius'))
 console.log(convertTemperature(32, 'Fahrenheit'))
 console.log(convertTemperature(0, 'Celsius'))
