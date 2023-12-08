@@ -14,8 +14,9 @@ repeatingX("xxxxx")  -> true
 */
 
 const repeatingX = string => {
-    for(let i = 0; i < string.length; i++){
-      if (string[i] === string[i + 1])
+    let str = string.toLowerCase()
+    for(let i = 0; i < str.length; i++){
+      if ('xX'.includes(str[i]) && str[i] === str[i + 1])
       return true
     }
     return false
