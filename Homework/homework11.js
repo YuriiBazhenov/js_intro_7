@@ -111,9 +111,21 @@ canFormString("CONVERSATION", "voices rant on")   -> true
 canFormString("12", "123")  -> false
 */
 
+const canFormString = (str1,str2) => {
+    let arr1 = str1.split('')
+    let arr2 = str2.split('').filter(x => x != ' ')
+    let empty = []
+    for (let i = 0; i < arr2.length; i++){
+        if (arr1.includes(arr2[i]) && !empty.includes(arr1[i])) empty.push(arr2[i])
+    }
+    return empty
+}
 
-
-
+console.log(canFormString("Hello", "Hi"))
+console.log(canFormString("programming", "gaming"))
+console.log(canFormString("halogen", "hello"))
+console.log(canFormString("CONVERSATION", "voices rant on"))
+console.log(canFormString("12", "123"))
 
 /*
 5
@@ -231,3 +243,18 @@ countOccurrence("IT conversations", "IT")   -> 2
 */
 
 
+const countOccurrence = (str1,str2) => {
+    let count = 0
+    let arr = str2.toLowerCase().split('').sort().join('')
+    for (let i = 0; i < arr.length;i++){
+    if (str1.toLowerCase().includes(arr[i]))
+    count ++
+    }
+    return count
+}
+
+console.log(countOccurrence("Javascript", "Java"))
+console.log(countOccurrence("Hello", "World"))
+console.log(countOccurrence("Can I can a can", "anc"))
+console.log(countOccurrence("Hello", "l"))
+console.log(countOccurrence("IT conversations", "IT"))
