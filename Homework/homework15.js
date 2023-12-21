@@ -11,20 +11,45 @@ toCamelCase(“I Learn Java Script”)    -> "iLearnJavaScript"
 toCamelCase(“helloWorld”)     -> “helloWorld”
 */
 
-const toCamelCase = string => {
-    if (!string.includes(' '))
-        return string
-    arr = ''
-    let str = string.trim()
-    for (const el of str.split(' ')) {
-        if (str.indexOf(el) === 0)
-            arr += el.toLowerCase()
-        else if (str.indexOf(el) !== 0)
-            `${arr += el[0].toUpperCase() + el.slice(1).toLowerCase()}}`
+// const toCamelCase = string => {
+//     if (!string.includes(' '))
+//         return string
+//     arr = ''
+//     let str = string.trim()
+//     for (const el of str.split(' ')) {
+//         if (str.indexOf(el) === 0)
+//             arr += el.toLowerCase()
+//         else if (str.indexOf(el) !== 0)
+//             `${arr += el[0].toUpperCase() + el.slice(1).toLowerCase()}`
 
-    }
-    return arr
+//     }
+//     return arr
+// }
+
+
+function toCamelCase(inputString) {
+    // Split the input string into an array of words
+    const words = inputString.split(' ');
+
+    // Capitalize the first letter of each word (except the first word)
+    const camelCaseWords = words.map((word, index) => {
+        if (index === 0) {
+            return word.toLowerCase(); // Keep the first word in lowercase
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+
+    // Join the words to form the camelCase string
+    const camelCaseString = camelCaseWords.join('');
+
+    return camelCaseString;
 }
+
+// Example usage:
+const inputString = "hello world example string";
+const camelCaseResult = toCamelCase(inputString);
+console.log(camelCaseResult); // Output: helloWorldExampleString
+
 console.log(toCamelCase("first name"))
 console.log(toCamelCase("last     name"))
 console.log(toCamelCase("   ZIP CODE"))
@@ -50,7 +75,7 @@ toSnakeCase("hello")     -> "hello
 const toSnakeCase = string => {
     arr = []
     for (const el of string.split(' ')) {
-        if (el.length >= 1)
+        if (el.length >=1 ) 
             arr.push(el.toLowerCase())
     }
     return arr.join('_')
@@ -108,7 +133,7 @@ isNeutral("+++", "+++")            ->  "+++"
 */
 
 
-const isNeutral = (str1, str2) => str1.split('').map((value, index) => value === str2.split('')[index] ? value : '0').join('')
+const isNeutral = (str1, str2) => str1.split('').map((value, index) => value === str2[index] ? value : '0').join('')
 
 console.log(isNeutral("-", "+"))
 console.log(isNeutral("-+", "-+"))
@@ -142,10 +167,10 @@ const isTrueOrFalse = string => {
     for (const el of str) {
         if ('ABCDEFGHIJKLM'.toLowerCase().includes(el[0].toLowerCase()))
             firstCount++
-        else if ('NOPQRSTUVWXYZ'.toLowerCase().includes(el[0].toLowerCase()))
+        else 
             secondCount++
     }
-    return firstCount >= secondCount ? true : false
+    return firstCount >= secondCount 
 }
 
 console.log(isTrueOrFalse("A big brown fox caught a bad rabbit"))
@@ -153,4 +178,3 @@ console.log(isTrueOrFalse("Xylophones can obtain Xenon."))
 console.log(isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK"))
 console.log(isTrueOrFalse("All FOoD tAsTEs NIcE for someONe"))
 console.log(isTrueOrFalse("Got stuck in the Traffic"))
-
