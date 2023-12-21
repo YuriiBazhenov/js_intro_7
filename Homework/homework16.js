@@ -99,8 +99,6 @@ reverse("")  -> ""
 reverse("Apples 456")  -> "654 selppA"
 */
 
-
-
 const reverse = string => string.split('').map(value => value).reverse().join('')
 
 console.log(reverse("Hello World"))
