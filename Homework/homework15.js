@@ -11,44 +11,22 @@ toCamelCase(“I Learn Java Script”)    -> "iLearnJavaScript"
 toCamelCase(“helloWorld”)     -> “helloWorld”
 */
 
-// const toCamelCase = string => {
-//     if (!string.includes(' '))
-//         return string
-//     arr = ''
-//     let str = string.trim()
-//     for (const el of str.split(' ')) {
-//         if (str.indexOf(el) === 0)
-//             arr += el.toLowerCase()
-//         else if (str.indexOf(el) !== 0)
-//             `${arr += el[0].toUpperCase() + el.slice(1).toLowerCase()}`
+const toCamelCase = string => {
+    if (!string.includes(' '))
+        return string
+    arr = ''
+    let str = string.trim()
+    for (const el of str.split(' ')) {
+        if (str.indexOf(el) === 0)
+            arr += el.toLowerCase()
+        else if (str.indexOf(el) !== 0)
+            `${arr += el[0].toUpperCase() + el.slice(1).toLowerCase()}`
 
-//     }
-//     return arr
-// }
-
-
-function toCamelCase(inputString) {
-    // Split the input string into an array of words
-    const words = inputString.split(' ');
-
-    // Capitalize the first letter of each word (except the first word)
-    const camelCaseWords = words.map((word, index) => {
-        if (index === 0) {
-            return word.toLowerCase(); // Keep the first word in lowercase
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-
-    // Join the words to form the camelCase string
-    const camelCaseString = camelCaseWords.join('');
-
-    return camelCaseString;
+    }
+    return arr
 }
 
-// Example usage:
-const inputString = "hello world example string";
-const camelCaseResult = toCamelCase(inputString);
-console.log(camelCaseResult); // Output: helloWorldExampleString
+
 
 console.log(toCamelCase("first name"))
 console.log(toCamelCase("last     name"))

@@ -9,7 +9,7 @@ const student = {
 
     },
     info: function (){
-        return `${this.fullnName()}'s age is $${this.age}.`;
+        return `${this.fullnName()}'s age is ${this.age}.`;
     }
 
 };

@@ -67,6 +67,7 @@ console.log(elementLength([]))
 console.log(elementLength(["Trampoline", "", "Tennis", "Basketball"]))
 
 /*
+4
 Requirement:
 Write a function named isArraySumEvenOrOdd() which takes an array of 
 numbers and calculates if the sum of its elements is even or odd.
@@ -88,6 +89,7 @@ console.log(isArraySumEvenOrOdd([0, 0]))
 console.log(isArraySumEvenOrOdd([1, 1, 1, 1, 1]))
 
 /*
+5
   Requirement:
 Write a function named reverse() which takes a string argument and returns the given string 
 reversed. 
@@ -133,3 +135,5 @@ console.log(reverseWords("TechGlobal"))
 console.log(reverseWords("Basketball is fun"))
 console.log(reverseWords(""))
 console.log(reverseWords("Apples 456"))
+
+
